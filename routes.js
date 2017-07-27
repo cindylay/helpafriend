@@ -12,8 +12,8 @@ router.get('/', function(req, res) {
 });
 
 // GET: get all jobs
-router.get('/api/jobs', function(req, res) {
-  Job.find({}, function(array, err){
+router.get('/api/jobs/all', function(req, res) {
+  Job.find({}, function(err, array){
     if(err){
       console.log("Could not find jobs!")
       res.send({
@@ -38,16 +38,16 @@ router.get('/api/jobs', function(req, res) {
 
 // GET: get a single job, view the job in detail
 router.get('/api/jobs/:jobId', function(req, res) {
-  var mealId = req.params.mealId;
-  Job.findOne({_id:mealId},function(array, err){
+  var jobId = req.params.jobId;
+  Job.findOne({_id:jobId},function(err, obj){
     if(err){
       console.log("Could not find single job")
       res.send({
         success: false,
         error: err
       })
-    } else if(array.length === 0){
-      console.log("array.length === 0!")
+    } else if(obj === {}){
+      console.log("object is empty!")
       res.send({
         success: false,
         message: "No job has been found"
@@ -56,13 +56,20 @@ router.get('/api/jobs/:jobId', function(req, res) {
       console.log('Single job has been found!');
       res.send({
         success: true,
-        message: array
+        message: obj
       })
     }
   })
 });
 
 // POST: click the apply button and apply for a job
-
+// router.post('/api/jobs/:jobId', function(req,res) {
+//   var jobId = req.params.jobId;
+//   if(!req.user){
+//     res.redirect('/api/login')
+//   } else {
+//
+//   }
+// })
 
 module.exports = router;

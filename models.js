@@ -35,6 +35,25 @@ var Job = mongoose.model('job', {
   },
 })
 
+// var User = mongoose.model('job', {
+//   firstName: {
+//     type: String,
+//     required: true
+//   },
+//   lastName: {
+//     type: String,
+//     required: true
+//   },
+//   password: {
+//     type: password,
+//     required: true
+//   },
+//   socialSecurityNumber: {
+//     type: number,
+//     required: true
+//   }
+// })
+
 module.exports = {
   Job: Job,
 };
