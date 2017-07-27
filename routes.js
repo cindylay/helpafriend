@@ -66,10 +66,38 @@ router.get('/api/jobs/:jobId', function(req, res) {
 // router.post('/api/jobs/:jobId', function(req,res) {
 //   var jobId = req.params.jobId;
 //   if(!req.user){
-//     res.redirect('/api/login')
+//     res.redirect('/api/jobs/:jobId/registerApply')
 //   } else {
-//
+//     res.redirect('/api/jobs/:jobId/loginApply')
 //   }
-// })
+// });
+//
+// router.get('/api/jobs/:jobId/registerApply', function(req,res) {
+//   res.redirect()
+// });
+//
+// router.post('/api/jobs/:jobId/registerApply', function(req,res) {
+//   if(/*login successful*/){
+//     res.redirect('/api/jobs/:jobId/congrats')
+//   } else {
+//     alert('Application unsucessful')
+//   }
+// });
+//
+// router.get('api/jobs/:jobId/loginApply', function(req,res) {
+//
+// });
+//
+// router.post('api/jobs/:jobId/loginApply', function(req,res) {
+//   if(/*login successful*/){
+//     res.redirect('/api/jobs/:jobId/congrats')
+//   } else {
+//     alert('Application unsucessful')
+//   }
+// });
+//
+// router.get('/api/jobs/:jobId/congrats', function (req,res) {
+//   if()
+// });
 
 module.exports = router;
