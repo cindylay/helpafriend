@@ -9,12 +9,12 @@ var Job = require('./models').Job;
 var User = require('./models').User;
 
 //our first test route right here:
-router.get('/api', function(req, res) {
+router.get('/', function(req, res) {
   res.render('homePage');
 });
 
 //GET: get all jobs (for Web App)
-router.get('/api/jobs/all', function(req, res) {
+router.get('/jobs/all', function(req, res) {
   Job.find({}, function(err, array){
     if(err){
       console.log("Could not find jobs!")
@@ -67,7 +67,7 @@ router.get('/mobile/api/jobs/all', function(req, res) {
 });
 
 // GET: get a single job, view the job in detail
-router.get('/api/jobs/:jobId', function(req, res) {
+router.get('/jobs/:jobId', function(req, res) {
   var jobId = req.params.jobId;
   Job.findOne({_id:jobId},function(err, obj){
     if(err){
@@ -97,7 +97,7 @@ router.get('/api/jobs/:jobId', function(req, res) {
 });
 
 // POST: click the apply button and apply for a job
-router.post('/api/jobs/:jobId', function(req,res) {
+router.post('/jobs/:jobId', function(req,res) {
   var jobId = req.params.jobId;
   var user = new User ({
     firstName: req.body.firstName,
@@ -154,11 +154,11 @@ router.get('/success', function(req, res) {
   res.render('congrats')
 })
 
-router.get('/api/hire', function(req, res) {
+router.get('/hire', function(req, res) {
   res.render('employerRegister')
 })
 
-router.post('/api/hire', function(req, res) {
+router.post('/hire', function(req, res) {
   if (!req.body.picture) {
     var job = new Job ({
       employerName: req.body.employerName,
