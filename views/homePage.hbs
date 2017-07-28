@@ -2,13 +2,51 @@
   <div class="homeBody">
     <center> <div class='center'>
       <!-- <h2 style="font-size: 100px">Wayfare</h2> -->
-      <h1 style="font-size:500%;color:#f49e42;margin-top:1.5em;"> Help a Friend </h1>
-      <h2>Find a job. Help a friend.</h2>
+      <h1 style="font-size:500%;color:000066;margin-top:1.5em;"> Help a Friend </h1>
+      <h2 style="color:000066;margin-top:1em;">Find a job. Help a friend.</h2> <br>
     </div>
-    <h2>Some tagline....</h2><br>
-    <a href="/search" class="btn btn-primary" style="border-radius: 5px; padding: 1px; width:170px; height:70px;"><h3>Employee</h3></a>
-    <a href="/search" class="btn btn-danger" style="border-radius: 5px; padding: 1px; width:170px; height:70px;margin-left:5px;"><h3>Employer</h3></a>
+    <!-- <h2>Some tagline....</h2><br> -->
+    <div style="display: flex; justify-content: center">
+      <a href="/api/jobs/all" class="btn-employ" style="right: -20%; position: relative;"><h3>Employee</h3></a>
+      <a href="/api/hire" class="btn-employer" style="left: -20%; position: relative;"><h3>Employer</h3></a>
+    </div>
     <br />
     </center>
   </div>
 </div>
+
+<style>
+  .btn-employ {
+
+              background-color: rgba(245, 245, 245, 0.5);
+              background-repeat:no-repeat;
+              border: none;
+              cursor:pointer;
+              overflow: hidden;
+              display: inline-block;
+              padding: 3px;
+              width:170px;
+              height:70px;
+              margin-left: 10px;
+              color: 000066;
+
+          }
+
+  .btn-employer {
+
+              background-color: rgba(245, 245, 245, 0.5);
+              background-repeat:no-repeat;
+              border: none;
+              cursor:pointer;
+              overflow: hidden;
+              display: inline-block;
+              padding: 3px;
+              width:170px;
+              height:70px;
+              margin-right: 10px;
+              color: 000066;
+
+          }
+</style>
+
+<!-- border-radius: 5px; -->

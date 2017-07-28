@@ -7,7 +7,7 @@ var Job = mongoose.model('job', {
   },
   picture: {
     type: String,
-    required: true
+    required: false
   },
   title: {
     type: String,
@@ -35,34 +35,38 @@ var Job = mongoose.model('job', {
   },
 })
 
-// var User = mongoose.model('job', {
-//   firstName: {
-//     type: String,
-//     required: true
-//   },
-//   lastName: {
-//     type: String,
-//     required: true
-//   },
-//   email: {
-//     type: String,
-//     required: true
-//   },
-//   phoneNumber: {
-//     type: String,
-//     required: true
-//   },
-//   socialSecurityNumber: {
-//     type: Number,
-//     required: true
-//   },
-//   password: {
-//     type: String,
-//     required: true
-//   }
-// })
+var User = mongoose.model('user', {
+  firstName: {
+    type: String,
+    required: true
+  },
+  middleName: {
+    type: String,
+    required: true
+  },
+  lastName: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
+  },
+  phoneNumber: {
+    type: String,
+    required: true
+  },
+  socialSecurityNumber: {
+    type: Number,
+    required: true
+  },
+  password: {
+    type: String,
+    required: true
+  }
+})
 
 module.exports = {
   Job: Job,
-  // User: User,
+  User: User,
 };

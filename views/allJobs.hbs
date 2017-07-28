@@ -1,0 +1,63 @@
+
+<center>
+<p><b><h1 style="font-size:380%; margin-top:1.2em;">Browse Jobs</h1></b></p>
+<style>
+/*.well {
+  background-color: rgba(157, 207, 232, 0.2);
+ }*/
+h3{
+  margin-top: 0;
+}
+
+.row{
+  padding: 10px;
+  border: 2px solid grey;
+  border-radius: 10px;
+  background-color: rgba(245, 245, 245, 0.8);
+}
+
+.jobsDiv{
+  width: 850px;
+  height: 250px;
+  text-align: left;
+  display: inline-block;
+}
+
+.pictureDiv{
+  align-items: left
+}
+
+.btn{
+  align-content: stretch;
+  background-color: #B0E0E6;
+}
+
+</style>
+
+      <!-- YOUR CODE HERE -->
+      <label><p><b><h2>Search:</h2></b></p>    </label> <input type="text" name="location" style="margin-left: 20px;padding:5px; border-radius:5px;">
+      {{#each jobObj}}
+    <div class="row">
+      <div class="pictureDiv">
+        <img src={{this.picture}} style="width:250px;height:250px; margin-top:20px; margin-left: 10px" align="left"/>
+      </div>
+      <div class="jobsDiv" style="justify-content:left;">
+        <p class="text"><b><h3>{{this.title}}</h3></b></p>
+        <!-- <img  src={{this.picture}} /> -->
+      <label><h4><b>Employer Name: {{this.employerName}}</b></h4></label> <br>
+      <label>Description: {{this.description}}</label> <br>
+      <label>Location: {{this.location}}</label> <br>
+      <label>When: {{toDate this.when}}</label> <br>
+      <label>Total Pay: ${{this.totalPay}}</label> <br>
+      <label>Time Allotted: {{this.timeAllotted}} </label> <br>
+      <a href="/api/jobs/{{this._id}}" class="btn" style="border-radius: 5px; padding: 0.5px; width:170px; height:40px; font-weight:medium; font-size:20px; color: white;">Apply</a>
+      </div>
+    </div> <br>
+    <br>
+    {{/each}}
+    <!-- End of First Row -->
+
+    <!--End of Interests-->
+    <!--Location-->
+      <!-- <label><p><b><h3>Location</h3></b></p></label> <input type="text" name="location"/> <br> -->
+    </center>
