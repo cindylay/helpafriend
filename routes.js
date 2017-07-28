@@ -124,6 +124,32 @@ router.post('/api/jobs/:jobId', function(req,res) {
   // }
 });
 
+router.post('/mobile/api/jobs/:jobId', function(req,res) {
+  var jobId = req.params.jobId;
+  var user = new User ({
+    firstName: req.body.firstName,
+    middleName: req.body.middleName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    phoneNumber: req.body.phoneNumber,
+    socialSecurityNumber: req.body.socialSecurity,
+    password: req.body.password
+  })
+  user.save(function (err, user) {
+    if (err){
+      console.log('User Application not saved in Mongoose', err)
+      res.json({
+        success: false
+      })
+    } else {
+      console.log('User Application has been saved', user)
+      res.json({
+        success: true
+      })
+    }
+  })
+});
+
 router.get('/success', function(req, res) {
   res.render('congrats')
 })
