@@ -9,14 +9,22 @@ var fs = require('fs');
 var path = require('path');
 var validator = require('express-validator');
 var mongoose = require('mongoose');
-
+var hbs = require('express-handlebars')({
+  defaultLayout: 'main',
+  extname: '.hbs'
+});
 // configure app to use bodyParser()
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+
+app.engine('hbs', hbs);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
 // Now I am registering the routes. All routes will be prefixed with /api
 app.use('/api', router);
+
 
 var port = process.env.PORT || 8080; //setting our port to run locally first!!!!!!!!!!!!!!!!!!!!!
 

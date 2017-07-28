@@ -7,12 +7,12 @@ var validator = require('express-validator');
 var Job = require('./models').Job;
 
 //our first test route right here:
-router.get('/', function(req, res) {
-  res.json({ message: 'Hooray! Welcome to our api!!'});
+router.get('/api', function(req, res) {
+  res.render('homePage');
 });
 
 // GET: get all jobs
-router.get('/api/jobs/all', function(req, res) {
+router.get('/mobile/api/jobs/all', function(req, res) {
   Job.find({}, function(err, array){
     if(err){
       console.log("Could not find jobs!")
